@@ -143,7 +143,7 @@ headerline1.textContent = futureHeadlineText;
 headerline1.setAttribute("href", futureHeadlineLink + `&utm_source=nb-blog-${dagWeek}&utm_medium=email&utm_campaign=headline&utm_content=%7c${sendDate}%7cheadline%7c`);
 
 "use strict";
-fetch("https://cms.frankwatching.com/feed-nieuwsbrief-v2/?poststatus=future-publish")
+fetch("https://www.frankwatching.com/feed-nieuwsbrief-v2/?poststatus=future-publish")
 .then(response => response.text())
 .then(str => new window.DOMParser().parseFromString(str, "text/xml"))
 .then(data => {
@@ -190,7 +190,7 @@ function headlineFutureItems(item, index) {
 
 // ## LOAD HEADLINES
 "use strict";
-fetch("https://cms.frankwatching.com/feed-nieuwsbrief-v2/")
+fetch("https://www.frankwatching.com/feed-nieuwsbrief-v2/")
 .then(function(respons) {
   return respons.text();
 })
@@ -256,7 +256,7 @@ document.getElementById('headlinesOverlay').ondragstart = function (event) {
 
 // ## LOAD AGENDA
 "use strict";
-fetch("https://cms.frankwatching.com/feed/academy/upcoming/")
+fetch("https://www.frankwatching.com/feed/academy/upcoming/")
 .then(response => response.text())
 .then(str => new window.DOMParser().parseFromString(str, "text/xml"))
 .then(data => {
@@ -322,14 +322,14 @@ document.getElementById('agendaOverlay').ondragstart = function (event) {
      // console.log('dragstart');
 }
 
-newsrss = 'https://cms.frankwatching.com/feed-nieuwsbrief-v2/?poststatus=future-publish';
+newsrss = 'https://www.frankwatching.com/feed-nieuwsbrief-v2/?poststatus=future-publish';
 
 if ( listSort === 'popularity') {
-  newsrss = 'https://cms.frankwatching.com/feed-nieuwsbrief-v2/?popularity';
+  newsrss = 'https://www.frankwatching.com/feed-nieuwsbrief-v2/?popularity';
 }
 
 if ( searchID ) {
-  newsrss = 'https://cms.frankwatching.com/feed-nieuwsbrief-v2/?postid='+ searchID;
+  newsrss = 'https://www.frankwatching.com/feed-nieuwsbrief-v2/?postid='+ searchID;
 }
 
 console.log('RSS:' + newsrss);
